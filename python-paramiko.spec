@@ -9,6 +9,7 @@ Source0:	http://www.lag.net/paramiko/download/paramiko-%{version}.tar.gz
 # Source0-md5:	f6f249655bfeec3bb5b84bab9d5fcf4b
 URL:		http://sourceforge.net/projects/mysql-python/
 BuildRequires:	python-devel >= 2.2
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,13 +27,16 @@ po³±czeñ ze zdalnymi maszynami.
 %setup  -q -n paramiko-%{version}
 
 %build
-env CFLAGS="%{rpmcflags} -DHAVE_OPENSSL=1" %{_bindir}/python setup.py build
+env CFLAGS="%{rpmcflags} -DHAVE_OPENSSL=1" %{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python -- setup.py install \
+
+%{__python} -- setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
