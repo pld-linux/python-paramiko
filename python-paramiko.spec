@@ -1,5 +1,5 @@
 Summary:	SSH2 protocol for Python
-Summary(pl):	Obs³uga protoko³u SSH2 w Pythonie
+Summary(pl.UTF-8):   ObsÅ‚uga protokoÅ‚u SSH2 w Pythonie
 Name:		python-paramiko
 Version:	1.6.3
 Release:	1
@@ -19,10 +19,10 @@ A module for python 2.2 (or higher) that implements the SSH2 protocol
 for secure (encrypted and authenticated) connections to remote
 machines.
 
-%description -l pl
-Modu³ dla jêzyka Python 2.2 (lub wy¿szego) implementuj±cy protokó³
+%description -l pl.UTF-8
+ModuÅ‚ dla jÄ™zyka Python 2.2 (lub wyÅ¼szego) implementujÄ…cy protokÃ³Å‚
 SSH2 dla uzyskania bezpiecznych (szyfrowanych i autoryzowanych)
-po³±czeñ ze zdalnymi maszynami.
+poÅ‚Ä…czeÅ„ ze zdalnymi maszynami.
 
 %prep
 %setup  -q -n paramiko-%{version}
