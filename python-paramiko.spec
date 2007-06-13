@@ -10,6 +10,7 @@ Source0:	http://www.lag.net/paramiko/download/paramiko-%{version}.tar.gz
 URL:		http://www.lag.net/paramiko/
 BuildRequires:	python-Crypto >= 1.9
 BuildRequires:	python-devel >= 2.3
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
