@@ -13,7 +13,7 @@ BuildRequires:	python-devel >= 2.3
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
-Requires:       python-Crypto
+Requires:	python-Crypto
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
