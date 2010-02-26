@@ -6,7 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://www.lag.net/paramiko/download/paramiko-%{version}.tar.gz
-# Source0-md5:	6ae82f2eb30748be789d4ff3909e4b5e
+# Source0-md5:	fa144ab46f1dc639b05ab948c30efac4
 URL:		http://www.lag.net/paramiko/
 BuildRequires:	python-Crypto >= 1.9
 BuildRequires:	python-devel >= 2.3
