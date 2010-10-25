@@ -50,25 +50,25 @@ find demos -name '*.py' -type f | xargs sed -i -e '1s|#!.*python.*|#!%{_bindir}/
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
 %py_postclean
+
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
-# we don't need those
-rm -fr $RPM_BUILD_ROOT%{py_sitescriptdir}/paramiko-%{version}-*.egg-info
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc PKG-INFO README
+%doc README
 %{py_sitescriptdir}/%{module}
+%if "%{py_ver}" > "2.4"
+%{py_sitescriptdir}/%{module}-*.egg-info
+%endif
 %{_examplesdir}/%{name}-%{version}
 
 %if %{with apidocs}
