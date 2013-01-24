@@ -1,18 +1,20 @@
+
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
+%bcond_without	tests	# do not perform "make test"
 
 %define 	module	paramiko
 Summary:	SSH2 protocol for Python
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie
 Name:		python-%{module}
-Version:	1.7.7.1
-Release:	2
+Version:	1.9.0
+Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	http://www.lag.net/paramiko/download/%{module}-%{version}.tar.gz
-# Source0-md5:	ce8e2c254378312a264206f65c354d72
-URL:		http://www.lag.net/paramiko/
+Source0:        http://pypi.python.org/packages/source/p/paramiko/paramiko-%{version}.tar.gz
+# Source0-md5:	b78472021ff6586dd61ad6972032f54f
+URL:            https://github.com/paramiko/paramiko/
 BuildRequires:	python-Crypto >= 1.9
 BuildRequires:	python-devel >= 2.3
 BuildRequires:	rpm-pythonprov
@@ -48,11 +50,14 @@ find demos -name '*.py' -type f | xargs sed -i -e '1s|#!.*python.*|#!%{_bindir}/
 %build
 %{__python} setup.py build
 
+%{?with_tests:%{__python} setup.py test}
+
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__python} setup.py install \
-	--root=$RPM_BUILD_ROOT \
-	--optimize=2
+	--skip-build \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
 
 %py_postclean
 
