@@ -8,12 +8,12 @@
 Summary:	SSH2 protocol for Python
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie
 Name:		python-%{module}
-Version:	1.9.0
-Release:	1
+Version:	1.15.1
+Release:	0.1
 License:	LGPL
 Group:		Libraries/Python
 Source0:        http://pypi.python.org/packages/source/p/paramiko/paramiko-%{version}.tar.gz
-# Source0-md5:	b78472021ff6586dd61ad6972032f54f
+# Source0-md5:	48c274c3f9b1282932567b21f6acf3b5
 URL:            https://github.com/paramiko/paramiko/
 BuildRequires:	python-Crypto >= 1.9
 BuildRequires:	python-devel >= 2.3
