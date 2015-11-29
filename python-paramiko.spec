@@ -20,7 +20,7 @@ Source0:	http://pypi.python.org/packages/source/p/paramiko/paramiko-%{version}.t
 # Source0-md5:	48c274c3f9b1282932567b21f6acf3b5
 URL:		https://github.com/paramiko/paramiko/
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-Crypto >= 1.9
 BuildRequires:	python-devel >= 2.3
