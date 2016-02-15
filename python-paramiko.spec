@@ -1,9 +1,12 @@
+# TODO:
+# Fix tests:
+#     class VARIANT_BOOL(ctypes._SimpleCData):
+# 	ValueError: _type_ 'v' not supported
 
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
-%bcond_without	tests	# do not perform "make test"
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# do not perform "make test"
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
@@ -12,12 +15,12 @@
 Summary:	SSH2 protocol for Python
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie
 Name:		python-%{module}
-Version:	1.15.1
-Release:	4
+Version:	1.16.0
+Release:	0.1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/p/paramiko/paramiko-%{version}.tar.gz
-# Source0-md5:	48c274c3f9b1282932567b21f6acf3b5
+# Source0-md5:	7e1203f5ffeb7d2bc2bffc4feb804216
 URL:		https://github.com/paramiko/paramiko/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
