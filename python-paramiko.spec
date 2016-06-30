@@ -10,7 +10,7 @@ Summary:	SSH2 protocol for Python 2
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie 2
 Name:		python-%{module}
 Version:	2.0.1
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/simple/paramiko/
@@ -21,18 +21,21 @@ URL:		https://github.com/paramiko/paramiko/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
-BuildRequires:	python-Crypto >= 2.1
+BuildRequires:	python-cryptography >= 1.1
 BuildRequires:	python-devel >= 1:2.6
-BuildRequires:	python-ecdsa >= 0.11
+BuildRequires:	python-pyasn1 >= 0.1.7
+
 %endif
 %if %{with python3}
-BuildRequires:	python3-Crypto >= 2.1
+BuildRequires:	python3-cryptography >= 1.1
 BuildRequires:	python3-devel >= 1:3.2
-BuildRequires:	python3-ecdsa >= 0.11
+BuildRequires:	python3-pyasn1 >= 0.1.7
+
 %endif
-Requires:	python-Crypto >= 2.1
-Requires:	python-ecdsa >= 0.11
+Requires:	python-cryptography >= 1.1
 Requires:	python-modules >= 1:2.6
+Requires:	python-pyasn1 >= 0.1.7
+
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,9 +53,9 @@ połączeń ze zdalnymi maszynami.
 Summary:	SSH2 protocol for Python 3
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie 3
 Group:		Libraries/Python
-Requires:	python3-Crypto >= 2.1
-Requires:	python3-ecdsa >= 0.11
+Requires:	python3-cryptography >= 1.1
 Requires:	python3-modules >= 1:3.2
+Requires:	python3-pyasn1 >= 0.1.7
 
 %description -n python3-%{module}
 A module for Python 3.2 (or higher) that implements the SSH2 protocol
