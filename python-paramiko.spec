@@ -9,13 +9,13 @@
 Summary:	SSH2 protocol for Python 2
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie 2
 Name:		python-%{module}
-Version:	1.16.0
+Version:	1.17.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/simple/paramiko/
-Source0:	https://pypi.python.org/packages/source/p/paramiko/paramiko-%{version}.tar.gz
-# Source0-md5:	7e1203f5ffeb7d2bc2bffc4feb804216
+Source0:	https://pypi.python.org/packages/b8/60/f83c7f27d15560c731fb7f39f308b5d056785a0cbb0b5c87ee3767b0db4c/paramiko-%{version}.tar.gz
+# Source0-md5:	45df29f2c569ff7d780eff8948f401d6
 URL:		https://github.com/paramiko/paramiko/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
@@ -123,7 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc README.rst
 %{py_sitescriptdir}/%{module}
 %{py_sitescriptdir}/%{module}-*.egg-info
 %{_examplesdir}/%{name}-%{version}
@@ -132,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc README
+%doc README.rst
 %{py3_sitescriptdir}/%{module}
 %{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
 %{_examplesdir}/python3-%{module}-%{version}
