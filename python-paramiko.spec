@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	apidocs	# API docs packaging
+%bcond_with	apidocs	# API docs packaging   # Docs gone since 2.0.1 ?
 %bcond_without	tests	# unit tests
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
@@ -9,13 +9,14 @@
 Summary:	SSH2 protocol for Python 2
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie 2
 Name:		python-%{module}
-Version:	1.17.1
+Version:	2.0.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/simple/paramiko/
-Source0:	https://pypi.python.org/packages/b8/60/f83c7f27d15560c731fb7f39f308b5d056785a0cbb0b5c87ee3767b0db4c/paramiko-%{version}.tar.gz
-# Source0-md5:	45df29f2c569ff7d780eff8948f401d6
+
+Source0:	https://github.com/paramiko/paramiko/archive/%{version}.tar.gz
+# Source0-md5:	24ee7e64682c2368176607fa23c39a5e
 URL:		https://github.com/paramiko/paramiko/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
