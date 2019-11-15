@@ -9,14 +9,14 @@
 Summary:	SSH2 protocol for Python 2
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie 2
 Name:		python-%{module}
-Version:	2.4.2
-Release:	2
+Version:	2.6.0
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/simple/paramiko/
 
 Source0:	https://github.com/paramiko/paramiko/archive/%{version}.tar.gz
-# Source0-md5:	7de566f1b0a65c59c635ccce7469604b
+# Source0-md5:	161c71e27076eb1f2fc2fb2705d95a45
 URL:		https://github.com/paramiko/paramiko/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
