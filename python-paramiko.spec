@@ -10,7 +10,7 @@ Summary:	SSH2 protocol for Python 2
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie 2
 Name:		python-%{module}
 Version:	2.6.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/simple/paramiko/
@@ -88,7 +88,7 @@ Dokumentacja API modułu paramiko.
 %prep
 %setup -q -n %{module}-%{version}
 
-find demos -name '*.py' -type f | xargs sed -i -e '1s|#!.*python.*|#!%{_bindir}/python|'
+find demos -name '*.py' -type f | xargs sed -i -e '1s|#!.*python.*|#!%{__python}|'
 
 # Windows-specific modules, break tests by using Windows-specific ctypes API
 %{__rm} paramiko/{win_pageant,_winapi}.py
