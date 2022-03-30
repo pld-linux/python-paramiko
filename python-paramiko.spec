@@ -10,7 +10,7 @@ Summary:	SSH2 protocol for Python 2
 Summary(pl.UTF-8):	Obsługa protokołu SSH2 w Pythonie 2
 Name:		python-%{module}
 Version:	2.6.0
-Release:	4
+Release:	5
 License:	LGPL v2.1+
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/simple/paramiko/
