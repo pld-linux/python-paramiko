@@ -31,6 +31,7 @@ BuildRequires:	python-cryptography >= 2.5
 BuildRequires:	python-mock
 BuildRequires:	python-pyasn1 >= 0.1.7
 BuildRequires:	python-pytest >= 4.4.2
+BuildRequires:	python-pytest-relaxed
 BuildRequires:	python-six
 %endif
 %endif
@@ -43,6 +44,7 @@ BuildRequires:	python3-bcrypt >= 3.1.3
 BuildRequires:	python3-cryptography >= 2.5
 BuildRequires:	python3-pyasn1 >= 0.1.7
 BuildRequires:	python3-pytest >= 4.4.2
+BuildRequires:	python3-pytest-relaxed
 BuildRequires:	python3-six
 %endif
 %endif
