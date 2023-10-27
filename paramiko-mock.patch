@@ -1,0 +1,95 @@
+--- paramiko-2.12.0/tests/test_channelfile.py.orig	2022-11-04 23:32:40.000000000 +0100
++++ paramiko-2.12.0/tests/test_channelfile.py	2023-10-27 16:44:41.043917943 +0200
+@@ -1,4 +1,7 @@
+-from mock import patch, MagicMock
++try:
++    from unittest.mock import patch, MagicMock
++except ImportError:
++    from mock import patch, MagicMock
+ 
+ from paramiko import Channel, ChannelFile, ChannelStderrFile, ChannelStdinFile
+ 
+--- paramiko-2.12.0/tests/test_client.py.orig	2022-11-04 23:32:40.000000000 +0100
++++ paramiko-2.12.0/tests/test_client.py	2023-10-27 16:45:19.653708776 +0200
+@@ -35,7 +35,10 @@ from tempfile import mkstemp
+ 
+ import pytest
+ from pytest_relaxed import raises
+-from mock import patch, Mock
++try:
++    from unittest.mock import patch, Mock
++except ImportError:
++    from mock import patch, Mock
+ 
+ import paramiko
+ from paramiko import SSHClient
+--- paramiko-2.12.0/tests/test_config.py.orig	2022-11-04 23:32:40.000000000 +0100
++++ paramiko-2.12.0/tests/test_config.py	2023-10-27 16:45:46.530229840 +0200
+@@ -11,7 +11,10 @@ try:
+ except ImportError:
+     Result = None
+ 
+-from mock import patch
++try:
++    from unittest.mock import patch
++except ImportError:
++    from mock import patch
+ from pytest import raises, mark, fixture
+ 
+ from paramiko import (
+--- paramiko-2.12.0/tests/test_kex.py.orig	2022-11-04 23:32:40.000000000 +0100
++++ paramiko-2.12.0/tests/test_kex.py	2023-10-27 16:47:26.926352615 +0200
+@@ -24,7 +24,10 @@ from binascii import hexlify, unhexlify
+ import os
+ import unittest
+ 
+-from mock import Mock, patch
++try:
++    from unittest.mock import Mock, patch
++except ImportError:
++    from mock import Mock, patch
+ import pytest
+ 
+ from cryptography.hazmat.backends import default_backend
+--- paramiko-2.12.0/tests/test_pkey.py.orig	2022-11-04 23:32:40.000000000 +0100
++++ paramiko-2.12.0/tests/test_pkey.py	2023-10-27 16:47:52.792879150 +0200
+@@ -41,7 +41,10 @@ from paramiko.common import o600
+ 
+ from cryptography.exceptions import UnsupportedAlgorithm
+ from cryptography.hazmat.primitives.asymmetric.rsa import RSAPrivateNumbers
+-from mock import patch, Mock
++try:
++    from unittest.mock import patch, Mock
++except ImportError:
++    from mock import patch, Mock
+ import pytest
+ 
+ from .util import _support, is_low_entropy, requires_sha1_signing
+--- paramiko-2.12.0/tests/test_proxy.py.orig	2022-11-04 23:32:40.000000000 +0100
++++ paramiko-2.12.0/tests/test_proxy.py	2023-10-27 16:48:22.616050918 +0200
+@@ -1,7 +1,10 @@
+ import signal
+ import socket
+ 
+-from mock import patch
++try:
++    from unittest.mock import patch
++except ImportError:
++    from mock import patch
+ from pytest import raises
+ 
+ from paramiko import ProxyCommand, ProxyCommandFailure
+--- paramiko-2.12.0/tests/test_transport.py.orig	2022-11-04 23:32:40.000000000 +0100
++++ paramiko-2.12.0/tests/test_transport.py	2023-10-27 16:48:44.662598148 +0200
+@@ -30,7 +30,10 @@ import time
+ import threading
+ import random
+ import unittest
+-from mock import Mock
++try:
++    from unittest.mock import Mock
++except ImportError:
++    from mock import Mock
+ 
+ from paramiko import (
+     AuthHandler,
