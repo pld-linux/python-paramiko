@@ -95,7 +95,7 @@ Dokumentacja API modułu paramiko.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 # Windows-specific modules, break tests by using Windows-specific ctypes API
 %{__rm} paramiko/{win_pageant,_winapi}.py
